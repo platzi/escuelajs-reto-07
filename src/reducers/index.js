@@ -3,11 +3,17 @@ const reducer = (state, action) => {
     case 'ADD_TO_CART':
       return {
         ...state,
-        cart: [...state.cart, action.payload]
-      }
+        cart: [...state.cart, action.payload],
+      };
+    case 'DELETE_FROM_CART':
+      return {
+        ...state,
+        cart: state.cart.filter((item, index) => index !== action.payload),
+        // cart: [...state.cart, action.payload],
+      };
     default:
       return state;
   }
-}
+};
 
 export default reducer;

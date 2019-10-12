@@ -1,23 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import deleteFromCart from '../actions/deleteFromCart';
 import '../styles/components/Checkout.styl';
 
-const Checkout = (props) => {
+const Checkout = props => {
   const { cart } = props;
+
+  const handleDeleteFromCart = productIndex => {
+    props.deleteFromCart(productIndex);
+  };
+
   return (
     <div className="Checkout">
       <div className="Checkout-content">
         {cart.length > 0 ? <h3>Lista de Pedidos:</h3> : <h2>Sin Pedidos</h2>}
-        {cart.map(item => (
+        {cart.map((item, index) => (
           <div className="Checkout-item">
             <div className="Checkout-element">
               <h4>{item.title}</h4>
-              <span>
-                $
-                {item.price}
-              </span>
+              <span>${item.price}</span>
             </div>
-            <i className="fas fa-trash-alt" />
+            <i
+              role="button"
+              className="fas fa-trash-alt"
+              onClick={() => handleDeleteFromCart(index)}
+            />
           </div>
         ))}
       </div>
@@ -28,13 +35,18 @@ const Checkout = (props) => {
         </div>
       )}
     </div>
-  )
+  );
 };
 
-const mapStateToProps = state => {
-  return {
-    cart: state.cart,
-  };
+const mapStateToProps = state => ({
+  cart: state.cart,
+});
+
+const mapDispatchToProps = {
+  deleteFromCart,
 };
 
-export default connect(mapStateToProps, null)(Checkout);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Checkout);
