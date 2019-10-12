@@ -5,6 +5,10 @@ const reducer = (state, action) => {
         ...state,
         cart: [...state.cart, action.payload]
       }
+    case 'DELETE_TO_CART':
+      return {
+        
+      }
     default:
       return state;
   }
