@@ -7,7 +7,9 @@ const Products = (props) => {
   const { products } = props;
 
   const handleAddToCart = (product) => {
-    props.addToCart(product);
+    const idunico = Date.now();
+    const newproduct ={...product,idunico}
+    props.addToCart(newproduct);
   }
 
   return (
