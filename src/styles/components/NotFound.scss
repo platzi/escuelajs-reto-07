@@ -1,0 +1,38 @@
+.mensaje {
+	background: linear-gradient(#21c08b, #ab88ff);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px 0px;
+	min-height: calc(100vh);
+}
+
+.mensaje__container {
+	color: white;
+	padding: 60px 68px 40px;
+	min-height: 100px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	animation: example 0.7s;
+	animation-iteration-count: infinite;
+}
+
+.mensaje__container--title {
+	color: white;
+	font-size: 25px;
+	display: flex;
+	font-size: 48px;
+	margin: 0px;
+}
+
+@keyframes example {
+	from {
+		font-size: 90%;
+	}
+	to {
+		font-size: 110%;
+	}
+}
