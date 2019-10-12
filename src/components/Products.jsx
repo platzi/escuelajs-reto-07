@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addToCart } from '../actions';
+import { addToCart, totalToCart } from '../actions';
 import '../styles/components/Products.styl';
 
 const Products = (props) => {
-  const { products } = props;
+  const { products, total } = props;
 
   const handleAddToCart = (product) => {
+    props.totalToCart
     props.addToCart(product);
   }
 
@@ -37,6 +38,7 @@ const Products = (props) => {
 const mapStateToProps = state => {
   return {
     products: state.products,
+    total: state.total,
   };
 };
 
