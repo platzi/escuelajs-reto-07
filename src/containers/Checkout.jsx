@@ -10,6 +10,11 @@ const Checkout = (props) => {
     props.removeFromCart(index);
   }
 
+  const price = React.useMemo(
+    () =>  cart.reduce((sum, p) => sum + p.price, 0),
+    [cart],
+  );
+
   return (
     <div className="Checkout">
       <div className="Checkout-content">
@@ -32,7 +37,10 @@ const Checkout = (props) => {
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>
+            <span>$</span>
+            {price}
+          </h4>
         </div>
       )}
     </div>
