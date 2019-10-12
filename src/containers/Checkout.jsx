@@ -30,7 +30,7 @@ const Checkout = (props) => {
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h1>$ {cart.reduce((totalPrice, item) => totalPrice+item.price, 0 )}</h1>
         </div>
       )}
     </div>
@@ -46,4 +46,5 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   deleteItem,
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(Checkout);
