@@ -8,7 +8,7 @@ const Products = (props) => {
 
   const handleAddToCart = (product) => {
     props.addToCart(product);
-  }
+  };
 
   return (
     <div className="Products">
@@ -32,7 +32,7 @@ const Products = (props) => {
       </div>
     </div>
   );
-}
+};
 
 const mapStateToProps = state => {
   return {
