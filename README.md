@@ -36,6 +36,7 @@ Necesitamos hacer pruebas dentro de nuestro proyecto utilizando Redux DevTools.
 
 1) Añade la configuración necesaria poder utilizar Redux DevTools.
 2) Prueba el flujo de tu aplicación con Redux DevTools.
+3) Ejecuta el comando "npm run lint" y repara los errores encontrados.
 
 ### Tercer Problema
 El boton de Eliminar no esta funcionando correctamente en la pagina del Checkout analiza los errores y propon una solución.
