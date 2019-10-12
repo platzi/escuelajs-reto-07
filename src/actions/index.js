@@ -1,6 +1,11 @@
-const addToCart = payload => ({
+
+export const addToCart = payload => ({
   type: 'ADD_TO_CART',
   payload,
 });
 
-export { addToCart };
+export const deleteCart = payload => ({
+  type: 'DELETE_CART',
+  payload,
+});
+
