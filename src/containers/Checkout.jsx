@@ -4,7 +4,7 @@ import '../styles/components/Checkout.styl';
 import { removeToCart } from '../actions/index';
 
 const Checkout = props => {
-  const { cart } = props;
+  const { cart, total } = props;
 
   const handleRemoveToCart = product => {
     props.removeToCart(product);
@@ -30,7 +30,7 @@ const Checkout = props => {
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>$ {total} </h4>
         </div>
       )}
     </div>
@@ -40,6 +40,7 @@ const Checkout = props => {
 const mapStateToProps = state => {
   return {
     cart: state.cart,
+    total: state.total,
   };
 };
 const mapDispatchToProps = {

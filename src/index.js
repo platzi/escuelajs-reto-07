@@ -51,6 +51,7 @@ const initialState = {
       description: 'bla bla bla bla bla',
     },
   ],
+  total: 0,
 };
 
 const store = createStore(
