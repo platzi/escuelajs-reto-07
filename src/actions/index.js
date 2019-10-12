@@ -6,6 +6,10 @@ const deleteToCart = payload => ({
   type: 'DELETE_TO_CART',
   payload,
 });
+const calculateTotal = payload => ({
+  type:'CALCULATE_TOTAL',
+  payload
+});
 
 // eslint-disable-next-line import/prefer-default-export
-export { addToCart, deleteToCart };
+export { addToCart, deleteToCart, calculateTotal };
