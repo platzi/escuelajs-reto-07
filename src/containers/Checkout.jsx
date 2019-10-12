@@ -10,6 +10,13 @@ const Checkout = props => {
     props.deleteToCart(itemId);
   };
 
+  const handleSumTotal = () => {
+    const reducer = (accumulator, currentValue) =>
+      accumulator + currentValue.price;
+    const sum = cart.reduce(reducer, 0);
+    return sum;
+  };
+
   return (
     <div className="Checkout">
       <div className="Checkout-content">
@@ -30,7 +37,7 @@ const Checkout = props => {
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>${handleSumTotal()}</h4>
         </div>
       )}
     </div>
