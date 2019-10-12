@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { compose, createStore } from 'redux';
 import App from './routes/App';
 import reducer from './reducers';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const initialState = {
   cart: [],
@@ -54,7 +56,7 @@ const initialState = {
   ]
 };
 
-const store = createStore(reducer, initialState);
+const store = createStore(reducer, initialState, composeEnhancers());
 
 ReactDOM.render(
   <Provider store={store}>
