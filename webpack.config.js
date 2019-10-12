@@ -49,4 +49,10 @@ module.exports = {
       filename: 'assets/[name].css',
     }),
   ],
+  devServer: {
+    port: 3000,
+    historyApiFallback: {
+      index: '/'
+    }
+  }
 };
