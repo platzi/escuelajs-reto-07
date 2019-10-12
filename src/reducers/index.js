@@ -4,10 +4,20 @@ const reducer = (state, action) => {
       return {
         ...state,
         cart: [...state.cart, action.payload]
-      }
+      };
+    case 'DELETE_TO_CART':
+      return {
+        ...state,
+        cart: state.cart.filter((item, index) => index !== action.payload),
+      };
+    case 'CALCULATE_TOTAL':
+      return {
+        ...state,
+        total :state.total+ action.payload,
+      };
     default:
       return state;
   }
-}
+};
 
 export default reducer;
