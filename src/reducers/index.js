@@ -5,6 +5,14 @@ const reducer = (state, action) => {
         ...state,
         cart: [...state.cart, action.payload]
       }
+    case 'REMOVE_FROM_CART': {
+      const newCart = [...state.cart];
+      newCart.splice(action.payload, 1);
+      return {
+        ...state,
+        cart: newCart,
+      }
+    }
     default:
       return state;
   }
