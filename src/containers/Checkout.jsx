@@ -19,7 +19,7 @@ const Checkout = (props) => {
                 {item.price}
               </span>
             </div>
-            <button type="button" onClick={() => handleRemove(item.randId)}>
+            <button className="Checkout-remove" type="button" onClick={() => handleRemove(item.randId)}>
               <i className="fas fa-trash-alt" />
             </button>
           </div>
