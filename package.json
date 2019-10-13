@@ -8,7 +8,9 @@
     "start": "webpack-dev-server --open --mode development",
     "server": "json-server locations.json",
     "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -52,6 +54,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.14.3",
+    "gh-pages": "^2.1.1",
     "json-server": "^0.15.1",
     "prettier": "^1.18.2",
     "webpack-dev-server": "^3.8.1"
@@ -59,7 +62,7 @@
   "bugs": {
     "url": "https://github.com/platzi/escuelajs-reto-07/issues"
   },
-  "homepage": "https://github.com/platzi/escuelajs-reto-07#readme",
+  "homepage": "https://jeffersonaguilar.github.io/escuelajs-reto-07/",
   "jest": {
     "moduleNameMapper": {
       "\\.(css|styl|sass|scss)$": "<rootDir>/__mocks__/styleMock.js"
