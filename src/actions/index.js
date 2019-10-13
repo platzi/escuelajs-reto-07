@@ -3,6 +3,11 @@ export const addToCart = payload => ({
   payload,
 });
 
+export const removeToCart = payload => ({
+  type: 'REMOVE_TO_CART',
+  payload,
+});
+
 
 
 
