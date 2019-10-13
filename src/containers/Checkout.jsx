@@ -1,9 +1,14 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { connect } from 'react-redux';
 import '../styles/components/Checkout.styl';
+import { deleteFromCart } from '../actions';
 
 const Checkout = (props) => {
   const { cart } = props;
+  const handleDeleteFromCart = (itemId) => {
+    props.deleteFromCart(itemId)
+  };
   return (
     <div className="Checkout">
       <div className="Checkout-content">
@@ -17,7 +22,12 @@ const Checkout = (props) => {
                 {item.price}
               </span>
             </div>
-            <i className="fas fa-trash-alt" />
+            <i 
+              className='fas fa-trash-alt'
+              onClick={() => handleDeleteFromCart(item.id)}
+              role='button'
+              tabIndex='0'
+            />
           </div>
         ))}
       </div>
@@ -37,4 +47,8 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(Checkout);
+const mapDispatchToProps = {
+  deleteFromCart,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);
