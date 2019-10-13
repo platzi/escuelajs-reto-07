@@ -6,7 +6,7 @@ import '../styles/components/Products.styl';
 const Products = (props) => {
   const { products } = props;
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = product => {
     props.addToCart(product);
   }
 
