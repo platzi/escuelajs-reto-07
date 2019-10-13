@@ -1,6 +1,10 @@
-const addToCart = payload => ({
+export const addToCart = (payload) => ({
   type: 'ADD_TO_CART',
   payload,
 });
 
-export default  addToCart;
+export const deleteProduct = (payload) => ({
+  type: 'DELETE_PRODUCT',
+  payload,
+});
+
