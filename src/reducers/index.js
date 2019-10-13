@@ -12,7 +12,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         cart: state.cart.filter(product => {
-          if(product.id == action.payload.id && hasNotBeenRemoved) {
+          if(product.id === action.payload.id && hasNotBeenRemoved) {
             hasNotBeenRemoved = false;
             return false;
           }
