@@ -1,0 +1,55 @@
+
+.animated
+  animation-name pulse
+  animation-duration 2s
+  animation-fill-mode both
+  animation-iteration-count infinite
+
+@keyframes pulse
+  0%
+    transform scale(1)
+    color #fff
+  
+  50%
+    transform scale(1.1)
+    color #000
+  
+  100%
+    transform scale(1)
+    color #fff
+
+.not-found
+  font-size 100px
+  text-align center
+  color #fff
+
+.not-found__text
+  font-size 25px
+  text-align center
+  color #fff
+
+.not-found__container
+  background linear-gradient(#21c08b, #5b3fff)
+  display flex
+  align-items center
+  justify-content center
+  flex-direction column
+  padding 0px 30px
+  min-height calc(100vh - 200px)
+
+.not-found__footer
+  background-color #5b3fff
+  display flex
+  align-items center
+  height 200px
+  width 100%
+
+.not-found__footer a
+  color $white-color
+  cursor pointer
+  font-size 14px
+  padding-left 30px
+  text-decoration none
+
+.not-found__footer ahover
+  text-decoration underline

@@ -1,9 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { removeToCart } from '../actions';
 import '../styles/components/Checkout.styl';
 
 const Checkout = (props) => {
-  const { cart } = props;
+  const { cart, total } = props;
+
+  const handleRemoveToCart = (payload) => {
+    props.removeToCart(payload);
+  }
+
   return (
     <div className="Checkout">
       <div className="Checkout-content">
@@ -17,14 +23,23 @@ const Checkout = (props) => {
                 {item.price}
               </span>
             </div>
-            <i className="fas fa-trash-alt" />
+            <button
+              type="button"
+              className="btn"
+              onClick={() => handleRemoveToCart({id: item.id, price: item.price})}
+            >
+              <i className="fas fa-trash-alt" />
+            </button>
           </div>
         ))}
       </div>
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>
+            $
+            {total}
+          </h4>
         </div>
       )}
     </div>
@@ -34,7 +49,12 @@ const Checkout = (props) => {
 const mapStateToProps = state => {
   return {
     cart: state.cart,
+    total: state.total,
   };
 };
 
-export default connect(mapStateToProps, null)(Checkout);
+const mapDispatchToProps = {
+  removeToCart,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);
