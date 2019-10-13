@@ -6,7 +6,7 @@ import '../styles/components/Checkout.styl';
 import actions from '../actions';
 
 const Checkout = (props) => {
-  const { cart, removeToCart } = props;
+  const { cart, removeToCart, total_price } = props;
 
   const handleRemoveToCart = (item) => {
     props.removeToCart(item);
@@ -32,7 +32,7 @@ const Checkout = (props) => {
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>${total_price}</h4>
         </div>
       )}
     </div>
@@ -42,6 +42,7 @@ const Checkout = (props) => {
 const mapStateToProps = state => {
   return {
     cart: state.cart,
+    total_price: state.total_price,
   };
 };
 

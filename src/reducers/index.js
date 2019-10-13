@@ -3,7 +3,8 @@ const reducer = (state, action) => {
     case 'ADD_TO_CART':
       return {
         ...state,
-        cart: [...state.cart, action.payload]
+        cart: [...state.cart, action.payload],
+        total_price: state.total_price + action.payload.price,
       }
     case 'REMOVE_TO_CART': {
       let hasNotBeenRemoved = true;
@@ -16,7 +17,8 @@ const reducer = (state, action) => {
             return false;
           }
           return true;
-        })
+        }),
+        total_price: state.total_price - action.payload.price,
       }
     }
     default:
