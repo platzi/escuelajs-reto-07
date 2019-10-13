@@ -3,4 +3,6 @@ const addToCart = payload => ({
   payload,
 });
 
-export { addToCart };
+export default {
+  addToCart
+}
