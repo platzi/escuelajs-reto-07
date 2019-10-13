@@ -22,6 +22,8 @@ const Header = (props) => (
 const mapStateToProps = state => {
   return {
     cart: state.cart,
+    totalPrice: state.totalPrice,
+    lol: "HOLA LOL",
   };
 };
 

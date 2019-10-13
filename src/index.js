@@ -7,6 +7,7 @@ import reducer from './reducers';
 
 const initialState = {
   cart: [],
+  totalPrice: 0,
   products: [
     {
       "id": "1",
@@ -54,7 +55,11 @@ const initialState = {
   ]
 };
 
-const store = createStore(reducer, initialState);
+const store = createStore(
+  reducer, 
+  initialState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
 
 ReactDOM.render(
   <Provider store={store}>
