@@ -4,7 +4,7 @@ import { removeToCart } from '../actions';
 import '../styles/components/Checkout.styl';
 
 const Checkout = (props) => {
-  const { cart } = props;
+  const { cart, total } = props;
   const handleAddToCart = (id) => {
     props.removeToCart(id)
   }
@@ -22,14 +22,19 @@ const Checkout = (props) => {
                 {item.price}
               </span>
             </div>
-            <i className="fas fa-trash-alt" onClick={ ()=> handleAddToCart(item.id)}/>
+            <i className="fas fa-trash-alt" role="button" tabIndex="0" onClick={()=> handleAddToCart(item)} onKeyPress={()=> handleAddToCart(item)} />
           </div>
         ))}
       </div>
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>
+            <span>
+              $
+              {total}
+            </span>
+          </h4>
         </div>
       )}
     </div>
@@ -39,6 +44,7 @@ const Checkout = (props) => {
 const mapStateToProps = state => {
   return {
     cart: state.cart,
+    total: state.total,
   };
 };
 
