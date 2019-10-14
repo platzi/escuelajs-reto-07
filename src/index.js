@@ -6,6 +6,7 @@ import App from './routes/App';
 import reducer from './reducers';
 
 const initialState = {
+  totalCart: 0,
   cart: [],
   products: [
     {
