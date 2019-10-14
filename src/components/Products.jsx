@@ -9,7 +9,6 @@ const Products = (props) => {
   const handleAddToCart = (product) => {
     props.addToCart(product);
   }
-
   return (
     <div className="Products">
       <div className="Products-items">
@@ -23,6 +22,7 @@ const Products = (props) => {
                   $
                   {product.price}
                 </span>
+                
               </h2>
               <p>{product.description}</p>
             </div>
