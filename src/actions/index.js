@@ -8,3 +8,7 @@ export const deleteProduct = (payload) => ({
   payload,
 });
 
+export const SumPrices = (payload) => ({
+  type: 'SUM_PRICES',
+  payload,
+});
