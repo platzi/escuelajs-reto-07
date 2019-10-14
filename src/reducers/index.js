@@ -3,7 +3,14 @@ const reducer = (state, action) => {
     case 'ADD_TO_CART':
       return {
         ...state,
-        cart: [...state.cart, action.payload]
+        cart: [...state.cart, action.payload],
+        totalCart: state.totalCart + Number(action.payload.price),
+      }
+    case 'DELETE_PRODUCT':
+      return {
+        ...state,
+        cart: state.cart.filter(items => items.id !== action.payload.id ),
+        totalCart: state.totalCart - Number(action.payload.price),
       }
     default:
       return state;
