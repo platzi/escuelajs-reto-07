@@ -23,16 +23,19 @@ const Checkout = (props) => {
                 {item.price}
               </span>
             </div>
-            <a onClick={() => handleDeleteProduct(item)}>
+            <button className="element-button" type="button" onClick={() => handleDeleteProduct(item)}>
               <i className="fas fa-trash-alt" />
-            </a>
+            </button>
           </div>
         ))}
       </div>
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>${totalCart}</h4>
+          <h4>
+            $
+            {totalCart}
+          </h4>
         </div>
       )}
     </div>
