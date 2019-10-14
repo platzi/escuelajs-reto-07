@@ -7,18 +7,11 @@ const reducer = (state, action) => {
         total_price: state.total_price + action.payload.price,
       }
     case 'REMOVE_TO_CART': {
-      let hasNotBeenRemoved = true;
-
+      state.cart.splice(action.payload.key, 1);
       return {
         ...state,
-        cart: state.cart.filter(product => {
-          if(product.id === action.payload.id && hasNotBeenRemoved) {
-            hasNotBeenRemoved = false;
-            return false;
-          }
-          return true;
-        }),
-        total_price: state.total_price - action.payload.price,
+        cart: state.cart,
+        total_price: state.total_price - action.payload.item.price,
       }
     }
     default:

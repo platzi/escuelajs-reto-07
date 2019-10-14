@@ -8,8 +8,8 @@ import actions from '../actions';
 const Checkout = (props) => {
   const { cart, removeToCart, total_price } = props;
 
-  const handleRemoveToCart = (item) => {
-    props.removeToCart(item);
+  const handleRemoveToCart = (item, key) => {
+    props.removeToCart(item, key);
   }
 
   return (
@@ -25,7 +25,7 @@ const Checkout = (props) => {
                 {item.price}
               </span>
             </div>
-            <i className="fas fa-trash-alt" onClick={() => handleRemoveToCart(item)}/>
+            <i className="fas fa-trash-alt" onClick={() => handleRemoveToCart(item, key)}/>
           </div>
         ))}
       </div>
