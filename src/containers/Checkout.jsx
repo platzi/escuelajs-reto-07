@@ -7,7 +7,6 @@ const Checkout = (props) => {
   const { cart } = props;
 
   const handleRemove = (id)=>{
-    //console.log("remove"+ id);
     props.removeFromCart(id);
   }
 

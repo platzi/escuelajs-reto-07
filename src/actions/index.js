@@ -8,4 +8,4 @@ const removeFromCart = payload => ({
   payload,
 })
 
-export { addToCart  as default };
+export { addToCart, removeFromCart  as default };
