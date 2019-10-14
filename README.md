@@ -22,6 +22,198 @@ npm run start
 npm run build
 ```
 
+
+## Documentación
+
+### src/index.js:
+Archivo inicial de al aplicación, en este archivo creamos el store por medio del createStore de Redux. Inicializamos el estado por medio de una función llamada prepareInitialState para agregar los estados locales, en este caso (totalCost) para llevar el control de costo total de los productos agregados al carrito de compras.
+
+```
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, compose } from 'redux';
+import App from './routes/App';
+import reducer from './reducers';
+
+const initialState = {...
+};
+
+const prepareInitialState = (state) => {
+  return {
+    ...state,
+    totalCost: 0
+  }
+}
+
+const customInitialState = prepareInitialState(initialState);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, customInitialState, composeEnhancers());
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+);
+```
+
+### Products.jsx
+Componente de React encargado de mostrar la lista de los productos disponibles y la opción de agregar a  carrito de compras por medio del botón comprar, este botón esta asociado a un flujo de Redux el cual desencadena dos eventos llamados 'addToCart' y 'plusToTotalCart' encargados de actualizar los items seleccionados en el carro de comprar y actualizar el total del costo de lostiems respectivamente.
+
+```
+
+const Products = (props) => {
+  const { products } = props;
+
+  const handleAddToCart = (product) => {
+    props.addToCart(product);
+    props.plusToTotalCost(product.price);
+  }
+
+  return (
+    <div className="Products">
+      <div className="Products-items">
+        {products.map(product => (
+          <div className="Products-item" key={product.id}>
+            <img src={product.image} alt={product.title} />
+            <div className="Products-item-info">
+              <h2>
+                {product.title}
+                <span>
+                  $
+                  {product.price}
+                </span>
+              </h2>
+              <p>{product.description}</p>
+            </div>
+            <button type="button" onClick={() => handleAddToCart(product)}>Comprar</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const mapStateToProps = state => {
+  return {
+    products: state.products,
+  };
+};
+
+const mapDispatchToProps = {
+  addToCart,
+  plusToTotalCost,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Products);
+```
+
+
+### Checkout.jsx
+
+Componente de React encargado de mostrar los productos seleccionados como opción de compra y el total del costo de los productos. Este componente utiliza otro componente llamado 'CheckoutItem' para pintar cada item seleccionado. Este componente esta asociado a un flujo de Redux para actualizarse cuando se elimine un producto.
+
+```
+
+const Products = (props) => {
+  const { products } = props;
+
+  const handleAddToCart = (product) => {
+    props.addToCart(product);
+    props.plusToTotalCost(product.price);
+  }
+
+  return (
+    <div className="Products">
+      <div className="Products-items">
+        {products.map(product => (
+          <div className="Products-item" key={product.id}>
+            <img src={product.image} alt={product.title} />
+            <div className="Products-item-info">
+              <h2>
+                {product.title}
+                <span>
+                  $
+                  {product.price}
+                </span>
+              </h2>
+              <p>{product.description}</p>
+            </div>
+            <button type="button" onClick={() => handleAddToCart(product)}>Comprar</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const mapStateToProps = state => {
+  return {
+    products: state.products,
+  };
+};
+
+const mapDispatchToProps = {
+  addToCart,
+  plusToTotalCost,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Products);
+```
+
+### CheckoutItem
+Componente de React encargado de pintar el producto seleccionado en la lista de pedidos. Este componente esta asociado a un flujo de Redux con los evento 'deleteFromCart' y 'removeFromTotalCost' encargados de eliminar un producto de la lista de pedidos y actualizar el precio total respectivamente.
+
+```
+
+const Products = (props) => {
+  const { products } = props;
+
+  const handleAddToCart = (product) => {
+    props.addToCart(product);
+    props.plusToTotalCost(product.price);
+  }
+
+  return (
+    <div className="Products">
+      <div className="Products-items">
+        {products.map(product => (
+          <div className="Products-item" key={product.id}>
+            <img src={product.image} alt={product.title} />
+            <div className="Products-item-info">
+              <h2>
+                {product.title}
+                <span>
+                  $
+                  {product.price}
+                </span>
+              </h2>
+              <p>{product.description}</p>
+            </div>
+            <button type="button" onClick={() => handleAddToCart(product)}>Comprar</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const mapStateToProps = state => {
+  return {
+    products: state.products,
+  };
+};
+
+const mapDispatchToProps = {
+  addToCart,
+  plusToTotalCost,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Products);
+```
+
 ## RETO
 
 ### Primer problema
