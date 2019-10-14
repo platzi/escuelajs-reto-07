@@ -4,7 +4,7 @@ import { deleteToCart } from '../actions';
 import '../styles/components/Checkout.styl';
 
 const Checkout = (props) => {
-  const { cart } = props;
+  const { cart, totalCart } = props;
 
   const handleDeleteToCart = (itemId) => {
     props.deleteToCart(itemId)
@@ -29,7 +29,7 @@ const Checkout = (props) => {
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>$ {cart.reduce((accumulator, item) => accumulator + item.price, 0)}</h4>
         </div>
       )}
     </div>
