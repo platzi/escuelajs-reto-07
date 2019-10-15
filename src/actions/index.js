@@ -3,4 +3,8 @@ const addToCart = payload => ({
   payload,
 });
 
-export { addToCart };
+const actions = {
+  addToCart,
+};
+
+export default actions;

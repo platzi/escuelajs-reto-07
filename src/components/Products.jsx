@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addToCart } from '../actions';
+import actions from '../actions';
 import '../styles/components/Products.styl';
 
 const Products = (props) => {
-  const { products } = props;
-
+  const { products, addToCart } = props;
+  
   const handleAddToCart = (product) => {
-    props.addToCart(product);
+    addToCart(product);
   }
-
+  
   return (
     <div className="Products">
       <div className="Products-items">
@@ -41,7 +41,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  addToCart,
+  addToCart: actions.addToCart,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);
