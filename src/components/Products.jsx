@@ -1,13 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import addToCart from '../actions';
+import { addToCart, addMoreProduct } from '../actions';
 import '../styles/components/Products.styl';
 
 const Products = (props) => {
-  const { products } = props;
+  const { products, cart } = props;
 
   const handleAddToCart = (product) => {
-    props.addToCart(product);
+    const productIndex = cart.findIndex(item => product.id===item.id);
+    if(productIndex>=0){
+      props.addMoreProduct(product.id)
+    }else{
+      props.addToCart({...product, quantity:1});
+    }
   }
 
   return (
@@ -37,11 +42,13 @@ const Products = (props) => {
 const mapStateToProps = state => {
   return {
     products: state.products,
+    cart: state.cart,
   };
 };
 
 const mapDispatchToProps = {
   addToCart,
+  addMoreProduct,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);

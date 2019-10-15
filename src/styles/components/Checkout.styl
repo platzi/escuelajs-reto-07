@@ -11,11 +11,33 @@
       margin 0 0 0 10px
       color  rgba(0,0,0,.4)
       cursor pointer
-  &-element
+  &-titles
     display flex
     justify-content space-between
+    align-items center
+    width 100%
+    border-bottom 1px solid #000
+    h4
+      margin 0
+  &-price
+    width 100%
+    display grid
+    align-items center
+    grid-column-gap 0px
+    border-bottom 1px solid #eee
+    grid-template-columns 1fr repeat(3,min-content)
+    &-value
+      justify-self end
+      margin-right 20px
+    &-quantity
+      margin-left 10px
+  &-element
+    display flex
+    justify-content flex-end
     align-items center
     width 100%
     border-bottom 1px solid #eee
     h4
       margin 0
+    &-quantity
+      margin-left 10px
