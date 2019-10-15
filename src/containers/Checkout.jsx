@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import '../styles/components/Checkout.styl';
-import { removeFromCart } from '../actions';
+import { removeFromCart } from '../actions/index';
 
 const Checkout = (props) => {
   const { cart } = props;
 
   const handleRemove = (id)=>{
-    props.removeFromCart(id);
-  }
+    props.removeFromCart(id)
+  };
 
   return (
     <div className="Checkout">
@@ -23,7 +23,9 @@ const Checkout = (props) => {
                 {item.price}
               </span>
             </div>
-            <button type='button' onClick={()=>handleRemove(item.id)}><i className="fas fa-trash-alt" /></button>
+            <button type='button' onClick={()=>handleRemove(item.id)}>
+              <i className="fas fa-trash-alt" />
+            </button>
           </div>
         ))}
       </div>
@@ -31,6 +33,9 @@ const Checkout = (props) => {
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
           <h4>$</h4>
+          <h4>
+            {cart.reduce((acum, item) => acum + item.price, 0)}
+          </h4>
         </div>
       )}
     </div>
@@ -45,6 +50,6 @@ const mapStateToProps = state => {
 
 const machDispatchToProps = {
   removeFromCart,
-}
+};
 
 export default connect(mapStateToProps, machDispatchToProps)(Checkout);

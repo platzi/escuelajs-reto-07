@@ -3,9 +3,9 @@ const addToCart = payload => ({
   payload,
 });
 
-const removeFromCart = payload => ({
-  type: 'REMOVE_FROM_ACTION',
+export const removeFromCart = payload => ({
+  type: 'REMOVE_FROM_CART',
   payload,
-})
+});
 
 export { addToCart, removeFromCart  as default };
