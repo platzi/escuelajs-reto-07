@@ -3,9 +3,14 @@ const addToCart = (payload) => ({
   payload,
 });
 
+const updateToCart = (payload) => ({
+  type: 'UPDATE_TO_CART',
+  payload,
+});
+
 const deleteToCart = (payload) => ({
   type: 'DELETE_TO_CART',
   payload,
 });
 
-export {addToCart, deleteToCart};
+export {addToCart, updateToCart, deleteToCart};
