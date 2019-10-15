@@ -5,14 +5,6 @@ import '../styles/components/Checkout.styl';
 
 const Checkout = (props) => {
   const { cart } = props;
-  const handleRemoveToCart = (itemId) => {
-    props.removeToCart(itemId);
-  };
-const total = () => {
-  const reducer = (accumulate, current) => accumulate + current;
-  const total = cart.map(item => item.price).reduce(reducer);
-  return total;
-};
   return (
     <div className="Checkout">
       <div className="Checkout-content">
@@ -26,8 +18,7 @@ const total = () => {
                 {item.price}
               </span>
             </div>
-            <i className="fas fa-trash-alt" />
-            <button className="btn" type="button" onClick={() => handleRemoveToCart(item.id)}><i className="fas fa-trash-alt"/></button>
+            <i className="fas fa-trash-alt" onClick={() => props.removeToCart(item.id)}/>
           </div>
         ))}
       </div>
@@ -35,7 +26,7 @@ const total = () => {
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
           <h4>$</h4>
-          <h4>${total()}</h4>
+          <h4>{`$${cart.reduce((acum,{price}) => acum + price,0)}`}</h4>
         </div>
       )}
     </div>
