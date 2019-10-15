@@ -9,7 +9,7 @@ const Products = (props) => {
   const handleAddToCart = (product) => {
     props.addToCart(product);
   }
-
+ 
   return (
     <div className="Products">
       <div className="Products-items">
@@ -41,7 +41,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  addToCart,
+  addToCart, 
+  
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);
