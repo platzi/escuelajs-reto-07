@@ -3,4 +3,14 @@ const addToCart = payload => ({
   payload,
 });
 
-export { addToCart };
+const removeToCart = payload => ({
+  type: 'REMOVE_TO_CART',
+  payload,
+})
+
+const actions = {
+  addToCart,
+  removeToCart,
+};
+
+export default actions;
