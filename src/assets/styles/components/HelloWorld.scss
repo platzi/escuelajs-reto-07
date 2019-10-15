@@ -1,0 +1,10 @@
+@import "../App.scss";
+@import "../Variables.scss";
+@import "../Animations.scss";
+@import "../Classes.scss";
+
+
+h1{
+    @extend .card;
+    padding: 2em;
+}
