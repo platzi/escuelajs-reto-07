@@ -3,4 +3,9 @@ const addToCart = payload => ({
   payload,
 });
 
-export { addToCart };
+const removeToCart = payload => ({
+  type: 'REMOVE_TO_CART',
+  payload,
+});
+
+export { addToCart, removeToCart };
