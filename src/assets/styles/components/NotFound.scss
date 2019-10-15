@@ -1,0 +1,25 @@
+// @import "../App.scss";
+// @import "../Variables.scss";
+// @import "../Animations.scss";
+// @import "../Classes.scss";
+
+body{
+    background-color: #eee;
+}
+.section404 {
+  @extend .flex-center;
+//   @extend .gradient-linear-animation;
+  @extend .card;
+  padding: 2em;
+  .section__img404 {
+    width: 350px;
+    height: 150px;
+    @extend .pulse;
+  }
+  .section__textinfo404 {
+    font-family: $font-handwritten;
+    // color: white;
+    font-size: 2.5em;
+    margin: 0;
+  }
+}

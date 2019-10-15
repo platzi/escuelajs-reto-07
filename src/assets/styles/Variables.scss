@@ -1,0 +1,30 @@
+//https://paletton.com/#uid=30u0+0kllllxjshpjxjhnafafep
+
+$color-primary-0: #00660D;	// Main Primary color */  
+$color-primary-1: #13B627;  
+$color-primary-2: #078717;  
+$color-primary-3: #003F08;  
+$color-primary-4: #001503;  
+  
+// Main Secondary color (1) */  
+$color-secondary-1-0: #014950;	
+$color-secondary-1-1: #10848F;  
+$color-secondary-1-2: #07626A;  
+$color-secondary-1-3: #002D31;  
+$color-secondary-1-4: #000F10;  
+
+  // Main tertiary color (2) */  
+$color-tertiary-2-0: #4F7A00;	
+$color-tertiary-2-1: #94DA16;  
+$color-tertiary-2-2: #6BA208;  
+$color-tertiary-2-3: #314C00;  
+$color-tertiary-2-4: #101900;  
+
+@import url(https://fonts.googleapis.com/css?family=Muli&display-swap);
+
+@font-face{
+    font-family: "handwritten-tomatoes";
+    src: url(/src/assets/static/fonts/handwritten-tomatoes.ttf);
+  }
+
+$font-handwritten: 'handwritten-tomatoes', sans-serif , system;
