@@ -12,8 +12,9 @@ const Products = (props) => {
       product.amount +=1
       props.updateToCart(product)
     } else {
-      product.amount =1 
+      product.amount =1
       props.addToCart(product);
+
     }
   }
 
@@ -44,6 +45,7 @@ const Products = (props) => {
 const mapStateToProps = state => {
   return {
     products: state.products,
+    totalPrice: state.totalPrice,
   };
 };
 

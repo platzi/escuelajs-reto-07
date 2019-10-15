@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { connect } from 'react-redux';
@@ -5,8 +6,8 @@ import { updateToCart, deleteToCart } from '../actions'
 import '../styles/components/Checkout.styl';
 
 const Checkout = (props) => {
-  const { cart } = props;
-
+  const { cart  } = props;
+  let totalPrince = 0
   const handleDeleteToCard = (itemId) => {
     props.deleteToCart(itemId);
   }
@@ -36,34 +37,39 @@ const Checkout = (props) => {
           <h4>Valor Total</h4>
           <h4>Eliminar</h4>
         </div>
-        {cart.map(item => (
-          <div className="Checkout-item" key={item.id}>
-            <div className="Checkout-element">
-              <h5>
-                {item.title}
-              </h5>
-              <span>
-                <i className="fas fa-angle-left" role="button" tabIndex={0} onClick={() => handleButAmount(item)} />
-                {item.amount}
-                <i className="fas fa-angle-right" role="button" tabIndex={0} onClick={() => handleMostAmount(item)} />
-              </span>
-              <span>
-                $
-                {item.price}
-              </span>
-              <span>
-                $
-                {item.price * item.amount}
-              </span>
-              <i className="fas fa-trash-alt" role="button" tabIndex={0} onClick={() => handleDeleteToCard(item.id)} />
+        {cart.map(item => { 
+          totalPrince += (item.price * item.amount)
+          return(
+            <div className="Checkout-item" key={item.id}>
+              <div className="Checkout-element">
+                <h5>
+                  {item.title}
+                </h5>
+                <span>
+                  <i className="fas fa-angle-left" role="button" tabIndex={0} onClick={() => handleButAmount(item)} />
+                  {item.amount}
+                  <i className="fas fa-angle-right" role="button" tabIndex={0} onClick={() => handleMostAmount(item)} />
+                </span>
+                <span>
+                  $
+                  {item.price}
+                </span>
+                <span>
+                  $
+                  {item.price * item.amount}
+                </span>
+                <i className="fas fa-trash-alt" role="button" tabIndex={0} onClick={() => handleDeleteToCard(item.id)} />
+              </div>
             </div>
-          </div>
-        ))}
+        )})}
       </div>
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>
+            $
+            {totalPrince}
+          </h4>
         </div>
       )}
     </div>
