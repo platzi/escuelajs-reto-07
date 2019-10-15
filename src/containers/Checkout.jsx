@@ -57,7 +57,10 @@ const Checkout = (props) => {
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>
+            {`$ `}
+            {cart.map(product => product.price*product.quantity).reduce((previousValue, currentValue) => previousValue+currentValue).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+          </h4>
         </div>
       )}
     </div>
