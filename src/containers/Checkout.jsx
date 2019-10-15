@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import CheckoutItem from '../components/CheckoutItem';
 import '../styles/components/Checkout.styl';
 
 const Checkout = (props) => {
   const { cart } = props;
+  const [priceAll, setPriceAll] = useState(0);
+
+  useEffect(() => {
+    const sumAll = cart.map((item) => item.price).reduce((valueB, valueA) => valueB + valueA, 0);
+    setPriceAll(sumAll);
+  }, [cart]);
+
   return (
     <div className="Checkout">
       <div className="Checkout-content">
@@ -18,7 +25,10 @@ const Checkout = (props) => {
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>
+            $
+            {priceAll}
+          </h4>
         </div>
       )}
     </div>

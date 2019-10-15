@@ -8,4 +8,3 @@ export const deleteToCart = (payload) => ({
   payload,
 });
 
-
