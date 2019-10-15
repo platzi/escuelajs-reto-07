@@ -8,6 +8,12 @@ const Checkout = (props) => {
   const handleRemoveToCart = (product) => {
     props.deleteToCart(product);
   };
+  const priceTotal = products => {
+    const price = products.reduce((accumulator, actualProduct) => {
+      return accumulator + actualProduct.price
+    },0)
+    return price
+  }
   return (
     <div className="Checkout">
       <div className="Checkout-content">
@@ -28,7 +34,7 @@ const Checkout = (props) => {
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>${priceTotal(cart)}</h4>
         </div>
       )}
     </div>
