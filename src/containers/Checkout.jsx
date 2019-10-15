@@ -1,17 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import '../styles/components/Checkout.styl';
-import { deleteFromCart, getTotalPrice } from '../actions';
+import { deleteFromCart } from '../actions';
 
 const Checkout = props => {
-  const { cart = {}, totalPrice } = props;
+  const { cart = {} } = props;
   const withProdocuts = cart.length > 0;
-
-  console.log(props)
+  
   const handleDeleteFromCart = itemId => {
     props.deleteFromCart(itemId);
-    props.getTotalPrice();
   };
+
+  console.log("pase")
+  const total = Object.values(cart).reduce((t, {price}) => t + price, 0)
 
   return (
     <div className="Checkout">
@@ -48,7 +49,7 @@ const Checkout = props => {
       {withProdocuts && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>{`$ ${totalPrice}`}</h4>
+          <h4>{`$ ${total}`}</h4>
         </div>
       )}
     </div>
@@ -58,13 +59,11 @@ const Checkout = props => {
 const mapStateToProps = state => {
   return {
     cart: state.cart,
-    totalPrice: state.totalPrice,
   };
 };
 
 const mapDispatchToProps = {
   deleteFromCart,
-  getTotalPrice,
 };
 
 export default connect(
