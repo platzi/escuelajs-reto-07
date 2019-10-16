@@ -8,15 +8,6 @@ const Checkout = props => {
   const handleDeleteItem = itemID => {
     props.deleteItem(itemID);
   };
-  // const [total, setTotal] = useState({
-  //   total: 0,
-  // });
-
-  // setTotal({
-  //   total: { cart.forEach(item => {
-  //     item.precie
-  //   })}
-  // })
 
   return (
     <div className="Checkout">
