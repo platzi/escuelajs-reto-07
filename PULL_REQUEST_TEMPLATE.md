@@ -2,15 +2,15 @@
 
 Solución al reto 07 de Escuela de JavaScript
 
-Nombre:
-Usuario Platzi:
+Nombre: Carlos Gerardo Pérez Horta
+Usuario Platzi: Charlie_Perez
 
 ## Ciudad
 - [] Ciudad de México
 - [] Bogotá
 
 ## Reto:
-  - [] Primer problema
-  - [] Segundo problema
-  - [] Tercer problema
-  - [] Cuarto Problema (Opcional)
+  - [X] Primer problema
+  - [X] Segundo problema
+  - [X] Tercer problema
+  - [X] Cuarto Problema (Opcional)
