@@ -10,6 +10,10 @@ const Checkout = (props) => {
     props.removeFromCart(product);
   }
 
+  const cartTotalPrice = () => {
+    return cart.reduce((totalPrice, prod) => totalPrice + prod.price, 0)
+  };
+
   return (
     <div className="Checkout">
       <div className="Checkout-content">
@@ -30,7 +34,7 @@ const Checkout = (props) => {
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>{cartTotalPrice()}</h4>
         </div>
       )}
     </div>
