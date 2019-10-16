@@ -38,8 +38,20 @@ module.exports = {
           'stylus-loader',
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/static/[hash].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
+  devServer: { historyApiFallback: true },
   plugins: [
     new HtmlWebPackPlugin({
       template: './public/index.html',
