@@ -32,14 +32,14 @@ const initialState = {
     {
       "id": "5",
       "image": "https://arepa.s3.amazonaws.com/stickers1.png",
-      "title": "Stickers",
+      "title": "Stickers 1",
       "price": 2,
       "description": "bla bla bla bla bla"
     },
     {
       "id": "6",
       "image": "https://arepa.s3.amazonaws.com/stickers2.png",
-      "title": "Stickers",
+      "title": "Stickers 2",
       "price": 2,
       "description": "bla bla bla bla bla"
     },

@@ -10,6 +10,10 @@ const Checkout = (props) => {
     props.removeFromCart(itemId)
   }
 
+  const handleCalculateTotal = () => {
+    return cart.reduce( (total, itemPrice) => (total + itemPrice.price), 0 );
+  }
+
   return (
     <div className="Checkout">
       <div className="Checkout-content">
@@ -26,6 +30,8 @@ const Checkout = (props) => {
             <i 
               className="fas fa-trash-alt"
               onClick={() => handleRemoveFromCart(item.id)} 
+              role = "button" 
+              tabIndex = "0"
             />
           </div>
         ))}
@@ -33,7 +39,10 @@ const Checkout = (props) => {
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>
+            $
+            {handleCalculateTotal()}
+          </h4>
         </div>
       )}
     </div>
