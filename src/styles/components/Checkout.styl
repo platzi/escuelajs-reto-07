@@ -1,21 +1,28 @@
 .Checkout
   grid-template-columns 3fr 1fr
   grid-gap 2rem
-  grid-row-ga 1.5em
+  grid-row-gap 1.5em
   display grid
+  &-content-items
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+    align-items: center
+    text-align: center
+    background-color: #33b1ff70
   &-item
     display flex
     justify-content space-between
     align-items center
+    text-align: center;
     .fas
-      margin 0 0 0 10px
       color  rgba(0,0,0,.4)
       cursor pointer
   &-element
-    display flex
-    justify-content space-between
-    align-items center
+    display grid
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
     width 100%
-    border-bottom 1px solid #eee
+    text-align: center
+    align-items: center
+    border-bottom 1px solid #33b1ff
     h4
       margin 0
