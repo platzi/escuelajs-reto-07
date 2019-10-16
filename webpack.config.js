@@ -7,6 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -40,7 +41,10 @@ module.exports = {
       },
     ],
   },
-  plugins: [
+    devServer: {
+      historyApiFallback: true,
+    },
+    plugins: [
     new HtmlWebPackPlugin({
       template: './public/index.html',
       filename: './index.html',
