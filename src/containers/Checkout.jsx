@@ -6,10 +6,13 @@ import { updateToCart, deleteToCart } from '../actions'
 import '../styles/components/Checkout.styl';
 
 const Checkout = (props) => {
-  const { cart  } = props;
+  const { cart, products } = props;
   let totalPrince = 0
   const handleDeleteToCard = (itemId) => {
     props.deleteToCart(itemId);
+    products.map((item => {if (itemId === item.id) {
+      item.amount = 0
+    }} ))
   }
 
   const handleMostAmount = (item) => {
@@ -20,6 +23,9 @@ const Checkout = (props) => {
   const handleButAmount = (item) => {
     if (item.amount === 1) {
       props.deleteToCart(item.id)
+      products.map((product => {if (product.id === item.id) {
+        product.amount = 0
+      }} ))
     } else {
       item.amount -=1
       props.updateToCart(item)
@@ -79,6 +85,7 @@ const Checkout = (props) => {
 const mapStateToProps = state => {
   return {
     cart: state.cart,
+    products : state.products
   };
 };
 
