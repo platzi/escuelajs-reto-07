@@ -3,4 +3,12 @@ const addToCart = payload => ({
   payload,
 });
 
-export { addToCart };
+const rmFromCar = payload => ({
+  type: 'REMOVE_FROM_CAR',
+  payload,
+});
+
+export {
+  addToCart,
+  rmFromCar
+};
