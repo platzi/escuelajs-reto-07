@@ -60,3 +60,8 @@ typings/
 
 # next.js build output
 .next
+
+#Deploy FireBase
+.firebase*
+firebase*
+.cache
