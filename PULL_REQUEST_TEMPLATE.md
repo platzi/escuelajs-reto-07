@@ -2,8 +2,8 @@
 
 Solución al reto 07 de Escuela de JavaScript
 
-Nombre:
-Usuario Platzi:
+Nombre: Cristian F. Tovar
+Usuario Platzi: Cristian Fabian Tovar 
 
 ## Ciudad
 - [] Ciudad de México
