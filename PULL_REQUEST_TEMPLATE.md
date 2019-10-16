@@ -6,11 +6,11 @@ Nombre:
 Usuario Platzi:
 
 ## Ciudad
-- [] Ciudad de México
+- [X] Ciudad de México
 - [] Bogotá
 
 ## Reto:
-  - [] Primer problema
-  - [] Segundo problema
-  - [] Tercer problema
-  - [] Cuarto Problema (Opcional)
+  - [X] Primer problema (NotFound)
+  - [X] Segundo problema (implementar Redux DevTools)
+  - [X] Tercer problema (Corregir eliminar en Checkout)
+  - [X] Cuarto Problema (Opcional) (mostrar el total en Checkout)
