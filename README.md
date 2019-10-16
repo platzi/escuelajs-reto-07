@@ -21,6 +21,9 @@ npm run start
 ```
 npm run build
 ```
+#### Deploy
+
+la solucion del reto ya despleago en produccion puede consultarlo en https://reto7escuelajs.firebaseapp.com utilizando el servicio de http://www.firebase.com y tulizando el script de compilacion y enviando la carpeta dist creada por este script
 
 ## RETO
 
