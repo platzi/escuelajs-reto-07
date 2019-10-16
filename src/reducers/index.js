@@ -10,9 +10,7 @@ const reducer = (state, action) => {
     case 'REMOVE_FROM_CART':
       return {
         ...state,
-        cart: [
-          ...state.cart.slice( action.payload.index, action.payload.index ),
-        ],
+          cart: state.cart.filter((product) => { return product.id !== action.payload.id })
       };
     default:
       return state;
