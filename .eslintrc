@@ -22,7 +22,10 @@
       "error",
       "absolute-first"
     ],
-    "import/newline-after-import": "error"
+    "import/newline-after-import": "error",
+    //Segundo problema, corrección errores
+    "import/prefer-default-export": 0,
+    "spaced-comment": ["error", "never"]
   },
   "globals": {
     "window": true,
