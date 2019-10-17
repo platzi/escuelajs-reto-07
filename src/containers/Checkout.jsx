@@ -27,11 +27,11 @@ const Checkout = (props) => {
             <i className="fas fa-trash-alt" onClick={() => handleDeleteProduct(item.id)}/>
           </div>
         ))}
-      </div>
+      </div>      
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
-          <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h3>Precio Total:</h3>          
+          <h4>${cart.reduce((total, item)=>(total + item.price),0)}</h4>
         </div>
       )}
     </div>
