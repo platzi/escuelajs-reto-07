@@ -8,6 +8,7 @@ import '../styles/components/Checkout.styl';
 const Checkout = (props) => {
   const { cart } = props;
   let ProdsIDs = 0;
+  let total = 0;
 
   const handelDeleteFromCart = (productId) => {
     props.deleteFromCart(productId)
@@ -24,7 +25,7 @@ const Checkout = (props) => {
               <div className="Checkout-element">
                 <h4>{item.title}</h4>
                 <span>
-                $
+                  $
                   {item.price}
                 </span>
               </div>
@@ -35,7 +36,18 @@ const Checkout = (props) => {
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          {cart.map(item => {
+            // eslint-disable-next-line operator-assignment
+            total = total + item.price;
+            // eslint-disable-next-line operator-assignment
+            ProdsIDs = ProdsIDs - 1;
+            return (
+              <h4 key={ProdsIDs}>
+                {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
+                {ProdsIDs === 0 ? <> ${total} </> : console.log(ProdsIDs)}
+              </h4>
+            )
+          })}
         </div>
       )}
     </div>
