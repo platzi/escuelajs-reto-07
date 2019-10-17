@@ -1,15 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import '../styles/components/Checkout.styl';
+import { removeFromCart } from '../actions';
 
 const Checkout = (props) => {
-  const { cart } = props;
+  const { cart, checkOutTotal } = props;
+
+
+  const handleCartItems = (elementIndex) => {
+    props.removeFromCart(elementIndex)
+  }
+
   return (
     <div className="Checkout">
       <div className="Checkout-content">
         {cart.length > 0 ? <h3>Lista de Pedidos:</h3> : <h2>Sin Pedidos</h2>}
-        {cart.map(item => (
-          <div className="Checkout-item">
+        {cart.map((item, index) => (
+          <div key={index} className="Checkout-item">
             <div className="Checkout-element">
               <h4>{item.title}</h4>
               <span>
@@ -17,14 +24,14 @@ const Checkout = (props) => {
                 {item.price}
               </span>
             </div>
-            <i className="fas fa-trash-alt" />
+            <i className="fas fa-trash-alt" onClick={() => handleCartItems(index)} />
           </div>
         ))}
       </div>
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>Precio Total:</h3>
-          <h4>$</h4>
+          <h4>${checkOutTotal}</h4>
         </div>
       )}
     </div>
@@ -34,7 +41,12 @@ const Checkout = (props) => {
 const mapStateToProps = state => {
   return {
     cart: state.cart,
+    checkOutTotal: state.checkOutTotal,
   };
 };
 
-export default connect(mapStateToProps, null)(Checkout);
+const mapDispathToProps = {
+  removeFromCart,
+}
+
+export default connect(mapStateToProps, mapDispathToProps)(Checkout);
