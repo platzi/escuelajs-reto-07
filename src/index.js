@@ -51,7 +51,8 @@ const initialState = {
       "description": "bla bla bla bla bla"
     },
 
-  ]
+  ],
+  checkOutTotal : 0,
 };
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
