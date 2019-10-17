@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ADD_TO_CART } from '../actions';
+import { ADD_TO_CART, REFRESH_TOTAL } from '../actions';
 import '../styles/components/Products.styl';
 
 const Products = (props) => {
@@ -8,6 +8,7 @@ const Products = (props) => {
 
   const handleAddToCart = (product) => {
     props.ADD_TO_CART(product);
+    props.REFRESH_TOTAL();
   }
 
   return (
@@ -42,6 +43,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   ADD_TO_CART,
+  REFRESH_TOTAL
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);

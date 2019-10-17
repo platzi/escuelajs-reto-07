@@ -7,7 +7,8 @@ const Checkout = (props) => {
   const { cart, total } = props;
 
   const handleRemoveFromCart = (productId) => {
-    props.REMOVE_FROM_CART(productId)
+    props.REMOVE_FROM_CART(productId);
+    props.REFRESH_TOTAL();
   }
 
   return (
