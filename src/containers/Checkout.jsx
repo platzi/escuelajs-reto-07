@@ -1,9 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { removeToCart } from '../actions'
 import '../styles/components/Checkout.styl';
 
 const Checkout = (props) => {
   const { cart } = props;
+
+  const handleRemoveToCart = (products, item) => {
+    const mirrorCart = products.filter(product => product.id !== item.id)
+    props.removeToCart(mirrorCart);
+  };
+
   return (
     <div className="Checkout">
       <div className="Checkout-content">
@@ -17,7 +24,9 @@ const Checkout = (props) => {
                 {item.price}
               </span>
             </div>
-            <i className="fas fa-trash-alt" />
+            <i 
+              className="fas fa-trash-alt"
+              onClick={() => handleRemoveToCart(cart, item)}/>
           </div>
         ))}
       </div>
@@ -37,4 +46,8 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(Checkout);
+const mapDispatchToProps = {
+  removeToCart,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);
