@@ -7,6 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    "publicPath": '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -38,7 +39,21 @@ module.exports = {
           'stylus-loader',
         ],
       },
+      {
+        test: /\.(png|gif|jpg)$/,
+        use: [
+          {
+            'loader': 'file-loader',
+            options: {
+              name: 'src/static/[hash].[ext]',
+            },
+          },
+        ]
+      }
     ],
+  },
+  devServer:{
+    historyApiFallback: true
   },
   plugins: [
     new HtmlWebPackPlugin({
