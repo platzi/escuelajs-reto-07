@@ -7,8 +7,8 @@ const Checkout = (props) => {
   const { cart } = props;
 
 
-  const handleCartItems = (itemID) => {
-    props.removeFromCart(itemID)
+  const handleCartItems = (elementIndex) => {
+    props.removeFromCart(elementIndex)
   }
 
   return (
@@ -17,8 +17,8 @@ const Checkout = (props) => {
       {console.log(cart.filter(items => items.id !== 3))}
       <div className="Checkout-content">
         {cart.length > 0 ? <h3>Lista de Pedidos:</h3> : <h2>Sin Pedidos</h2>}
-        {cart.map(item => (
-          <div key={item.id} className="Checkout-item">
+        {cart.map((item, index) => (
+          <div key={index} className="Checkout-item">
             <div className="Checkout-element">
               <h4>{item.title}</h4>
               <span>
@@ -26,7 +26,7 @@ const Checkout = (props) => {
                 {item.price}
               </span>
             </div>
-            <i className="fas fa-trash-alt" onClick={() => handleCartItems(item.id)} />
+            <i className="fas fa-trash-alt" onClick={() => handleCartItems(index)} />
           </div>
         ))}
       </div>

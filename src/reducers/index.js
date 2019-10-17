@@ -6,9 +6,10 @@ const reducer = (state, action) => {
         cart: [...state.cart, action.payload]
       }
     case 'REMOVE_FROM_CART':
+      const elementRemoved = state.cart.splice(action.payload, 1)
       return {
         ...state,
-        cart: state.cart.filter(items => items.id !== action.payload)
+        cart: [...state.cart],
       }
     default:
       return state;
