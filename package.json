@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --open --mode development",
     "server": "json-server locations.json",
     "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
-    "lint": "eslint src/"
+    "lint": "eslint ./src/"
   },
   "repository": {
     "type": "git",
