@@ -13,7 +13,7 @@ const Header = (props) => (
         <i className="fas fa-shopping-basket" />
       </Link>
       {props.cart.length > 0 &&
-        <div className="Header-alert">{props.cart.length}</div>
+        <div className="Header-alert">{props.cart.reduce((total, {amount})=> total + amount,0)}</div>
       }
     </div>
   </div>
