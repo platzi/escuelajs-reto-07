@@ -9,7 +9,6 @@ const Products = (props) => {
   const handleAddToCart = (product) => {
     props.addToCart(product);
   }
-
   return (
     <div className="Products">
       <div className="Products-items">
