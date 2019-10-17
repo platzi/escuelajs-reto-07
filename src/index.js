@@ -1,10 +1,14 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+
+//Segundo problema reto 07 Platzi
+import { createStore, compose } from 'redux';
 import App from './routes/App';
 import reducer from './reducers';
 
+ 
 const initialState = {
   cart: [],
   products: [
@@ -54,7 +58,10 @@ const initialState = {
   ]
 };
 
-const store = createStore(reducer, initialState);
+//Segundo problema reto 07 Platzi
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(reducer, initialState, composeEnhancers());
 
 ReactDOM.render(
   <Provider store={store}>
@@ -62,3 +69,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('app')
 );
+
+ export default initialState;
