@@ -4,7 +4,8 @@ import { deleteToCart } from '../actions';
 import '../styles/components/Checkout.styl';
 
 const Checkout = (props) => {
-  const { cart, id } = props;
+  const { cart} = props;
+  let total = 0;
 
    const handleDeleteToCart = productId => {
     props.deleteToCart(productId);
@@ -32,8 +33,15 @@ const Checkout = (props) => {
       </div>
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
-          <h3>Precio Total:</h3>
-          <h4>$</h4>
+        <h3>Precio Total:</h3>
+          {cart.map(item => {
+            total +=item.price
+            })
+          }
+            <h4>
+              $
+              {total}
+            </h4>
         </div>
       )}
     </div>
