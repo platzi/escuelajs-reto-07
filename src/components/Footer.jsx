@@ -1,8 +1,10 @@
 import React from 'react';
+import logo from '../assets/static/logo_white_background.jpg';
 
 const Footer = () => (
   <div>
-    <p>Todos los Izquierdos Reservados</p>
+    <p>Política de privacidad</p>
+    <p>Términos y condiciones</p>
   </div>
 );
 
