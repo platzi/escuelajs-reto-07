@@ -4,6 +4,7 @@ import Home from '../containers/Home';
 import Checkout from '../containers/Checkout';
 import Layout from '../components/Layout';
 import NotFound from '../containers/NotFound';
+import Store from '../containers/Store';
 
 const App = () => (
   <BrowserRouter>
@@ -11,6 +12,8 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/checkout" component={Checkout} />
+        <Route exact path="/store" component={Store} />
+      
         <Route component={NotFound} />
       </Switch>
     </Layout>

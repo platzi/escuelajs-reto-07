@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from '../assets/static/logo_white_background.jpg';
+import '../styles/components/Footer.styl';
 
 const Footer = () => (
-  <div>
+  <div className='Footer-container'>
     <p>Política de privacidad</p>
     <p>Términos y condiciones</p>
   </div>

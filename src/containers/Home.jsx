@@ -1,6 +1,16 @@
 import React from 'react';
-import Products from '../components/Products';
+import Intro from '../components/home/Intro';
+import Explanation from '../components/home/Explanation';
+import Carousel from '../components/home/Carousel';
 
-const Home = () => <Products />;
+const Home = () => {
+    return(
+      <>
+        <Intro />
+        <Explanation />
+        <Carousel />
+      </>
+    );
+}
 
 export default Home;
