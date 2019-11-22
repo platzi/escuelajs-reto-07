@@ -1,60 +1,50 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, compose } from 'redux';
 import App from './routes/App';
 import reducer from './reducers';
+import Product2 from './assets/static/images/photos/tenis1.png';
+import Product1 from './assets/static/images/photos/misterybox.png';
+import Product3 from './assets/static/images/photos/jeans.jpg';
+import Product4 from './assets/static/images/photos/sueter.jpg';
 
 const initialState = {
   cart: [],
   products: [
     {
       "id": "1",
-      "image": "https://arepa.s3.amazonaws.com/camiseta.png",
-      "title": "Camiseta",
-      "price": 25,
-      "description": "bla bla bla bla bla"
+      "image": Product1,
+      "title": "Suscripción Ventu Box",
+      "description": "Mensualmente recibe productos solo para ti",
+      "price": 800  
+    },
+    {
+      "id": "2",
+      "image": Product2,
+      "title": "Tenis Marometta",
+      "description": "Tenis con diseños personalizados",
+      "price": 750  
     },
     {
       "id": "3",
-      "image": "https://arepa.s3.amazonaws.com/mug.png",
-      "title": "Mug",
-      "price": 10,
-      "description": "bla bla bla bla bla"
+      "image": Product3,
+      "title": "Jeans IC",
+      "description": "Jeans con ajuste especial",
+      "price":  500
     },
     {
       "id": "4",
-      "image": "https://arepa.s3.amazonaws.com/pin.png",
-      "title": "Pin",
-      "price": 4,
-      "description": "bla bla bla bla bla"
+      "image": Product4,
+      "title": "Sueter Pue",
+      "description": "Ideal para esta época de frío",
+      "price": 350  
     },
-    {
-      "id": "5",
-      "image": "https://arepa.s3.amazonaws.com/stickers1.png",
-      "title": "Stickers",
-      "price": 2,
-      "description": "bla bla bla bla bla"
-    },
-    {
-      "id": "6",
-      "image": "https://arepa.s3.amazonaws.com/stickers2.png",
-      "title": "Stickers",
-      "price": 2,
-      "description": "bla bla bla bla bla"
-    },
-    {
-      "id": "7",
-      "image": "https://arepa.s3.amazonaws.com/hoodie.png",
-      "title": "Hoodie",
-      "price": 35,
-      "description": "bla bla bla bla bla"
-    },
-
   ]
 };
 
-const store = createStore(reducer, initialState);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = createStore(reducer, initialState, composeEnhancers());
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,27 +1,59 @@
+@import '../Vars.styl'
+@import url('https://fonts.googleapis.com/css?family=Muli|Roboto&display=swap');
+
+
+.Store-title
+  background-color #f8f9fa
+  display flex
+  justify-content center 
+  
+  font-family 'Muli', sans-serif
+  h2 
+     border-bottom 1px solid #8c92a0
+
+.Products--container
+  display flex
+  justify-content center 
+  
 .Products
-  &-items
-    grid-template-columns repeat(3, 1fr)
-    grid-gap 1.5rem
+  background-color #f8f9fa
+.Products-items
+    grid-template-columns repeat(2, 1fr)
+    grid-gap 1rem
     grid-row-ga 1.5em
     display grid
-  &-item
+    background-attachment fixed
+    margin-left 20px
+    margin-right 20px
+
+.Products-item
+
     text-decoration none
     box-shadow 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03)
     border-radiu 5px
     margin 0 0 20px 0
     position relative
-    &-info
+
+.Products-item-info
       padding 10px
+      font-family 'Muli', sans-serif
       h2
-        font-size 18px
+        font-size 22px
         font-weight bold
         display flex
-        justify-content space-between
-        span
-          color #33b13a
+        justify-content center
+        color ventu-color3
+      span
+        color #33b13a
+        display flex
+        justify-content center
+        color ventu-color3
+        font-size 18px
       p
-        font-size 14px
+        font-size 18px
         font-weight 300
+        display flex
+        justify-content center
     img
       width 100%
       height 200px
@@ -30,13 +62,14 @@
     button
       width 100%
       padding 10px
-      border-radius 0px 0px 5px 5px
+      border-radius 15px
       border 0px
       outline 0
       cursor pointer
-      font-size 14px
+      font-size 22px
       font-weight 300
       &:hover
-        background-color rgba(39,44,49,.06)
+        background-color ventu-color1
+        color white 
 
 
