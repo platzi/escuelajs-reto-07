@@ -32,11 +32,10 @@ const Header = (props) => (
       <div className='Header__inferior--container'>
        <div className='Inferior-menu-cont'>
        <div className='Header__menu'>
-          <li><Link to='/' className='Link-header'>Home</Link></li>
-          <li><Link to='/aboutus' className='Link-header'>Sobre nosotros</Link></li>
-          <li><Link to='/Store' className='Link-header'>Tienda</Link></li>
+          <li><Link to='/' className='Link-header'>HOME</Link></li>
+          <li><Link to='/aboutus' className='Link-header'>SOBRE NOSOTROS</Link></li>
+          <li><Link to='/Store' className='Link-header'>TIENDA</Link></li>
           <li><Link to='/faq' className='Link-header'>FAQ</Link></li>
-          <li><Link to='/contact' className='Link-header'>Contacto</Link></li>
         </div>
       </div>
 

@@ -12,6 +12,7 @@ const Products = (props) => {
 
   return (
     <div className="Products">
+      <div className='Products--container'>
       <div className="Products-items">
         {products.map(product => (
           <div className="Products-item" key={product.id}>
@@ -19,16 +20,18 @@ const Products = (props) => {
             <div className="Products-item-info">
               <h2>
                 {product.title}
-                <span>
+               
+              </h2>
+              <p>{product.description}</p>
+               <span>
                   $
                   {product.price}
                 </span>
-              </h2>
-              <p>{product.description}</p>
             </div>
             <button type="button" onClick={() => handleAddToCart(product)}>Comprar</button>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

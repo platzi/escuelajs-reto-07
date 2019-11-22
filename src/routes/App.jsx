@@ -11,6 +11,7 @@ import  Contact from '../containers/Contact';
 import Login from '../containers/Login';
 import Register from '../containers/Register';
 import Checkout from '../containers/Checkout';
+import Thanks from '../containers/Thanks';
 
 const App = () => (
   <BrowserRouter>
@@ -24,7 +25,9 @@ const App = () => (
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/thanks" component={Thanks} />
         <Route exact path="/checkout" component={Checkout} />
+        
         <Route component={NotFound} />
       </Switch>
     </Layout>

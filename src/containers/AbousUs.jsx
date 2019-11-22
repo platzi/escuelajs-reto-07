@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/components/AboutUs.styl';
 
 const AboutUs = () => (
   <div className='Explanation'> 

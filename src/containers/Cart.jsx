@@ -27,6 +27,7 @@ const Cart = (props) => {
           <div className="Cart-item" key={index}>
             <div className="Cart-element">
               <h4>{item.title}</h4>
+              <h3>{item.description}</h3>
               <span>
                 $
                 {item.price}
