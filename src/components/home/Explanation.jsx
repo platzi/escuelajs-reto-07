@@ -37,7 +37,7 @@ const Explanation = () => {
                       <img src={tryIcon} alt="Encuentra lo mejor" className='icon' />
                     </div>
                   <div className='explanation-text'>
-                      <h2>PRUEBA</h2>
+                      <h2>PRUEBA LO MEJOR</h2>
                       <p>Un distribuidor VENTU te entregará tu orden.</p>
                     </div>
                 </div>

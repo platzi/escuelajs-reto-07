@@ -1,0 +1,93 @@
+@import '../Vars.styl'
+.Cart
+  //grid-template-columns 3fr 1fr
+  //grid-gap 2rem
+  //grid-row-ga 1.5em
+  //display grid
+  display block
+  height 600px
+  background-color #f8f9fa
+  &-item
+    display flex
+    justify-content space-between
+    align-items center
+    .fas
+      margin 0 0 0 10px
+      color  rgba(0,0,0,.4)
+      cursor pointer
+  &-element
+    display flex
+    justify-content space-between
+    align-items center
+    width 100%
+    border-bottom 1px solid #eee
+    h4
+      margin 0
+
+.Cart-sidebar
+  display flex
+  justify-content space-between
+
+.Cart-sidebar_left
+  padding-left 15px
+  width 50%
+  display flex
+  justify-content space-between
+  align-items center 
+
+.Left-buttons
+  width 100%
+  display flex
+  padding-left 15px
+  justify-content flex-start
+
+.Left-buttons-link1
+  cursor pointer
+  padding 10px 20px 10px 20px !important
+  background-color ventu-color2
+  font-size 18px !important
+  font-weight 300
+  border-radius 10px;
+  border-color ventu-color2
+  line-height 1.5
+  width 300px
+  margin-right 20px
+
+.Left-buttons-link2
+  cursor pointer
+  padding 10px 20px 10px 20px !important
+  background-color ventu-color1
+  font-size 18px !important
+  font-weight 300
+  border-radius 10px;
+  border-color ventu-color1
+  line-height 1.5
+  width 300px
+
+
+
+.Cart-sidebar-right
+  padding-right 15px
+
+Cart---sidebar-button
+  padding-right 15px
+  margin-right 15px
+.button-link-checkout
+  cursor pointer
+  padding 10px 20px 10px 20px !important
+  background-color ventu-color2
+  font-size 24px !important
+  font-weight 300
+  border-radius 10px;
+  border-color ventu-color2
+  line-height 1.5
+  width 300px
+  height 80px
+
+.button--link
+  color white
+  text-decoration none
+  letter-spacing .2em
+
+.total-cart
+  border-bottom 1px solid #8c92a0

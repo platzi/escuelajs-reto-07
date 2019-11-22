@@ -11,7 +11,7 @@ return(
 <div className='Carousel-section'>
     <div className='Carousel-container'>
         <div className='Carousel-container-title'>
-            <h2>Los mejores productos</h2>
+            <h2 className='title-carousel'>Los mejores productos</h2>
         </div>
         <div className='Carousel-container-products'>
             <div className='products-carousel'>
