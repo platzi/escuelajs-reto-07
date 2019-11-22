@@ -11,42 +11,18 @@ return(
             </h2>
         </div>
         <div className='FAQ-container-text'>
-            <p className='FAQ-question'>
+            <h3 className='FAQ-question'>
             ¿Cómo funciona la mistery box?
-            </p>
-           
+            </h3>
             <p className='FAQ-answer'>
-            Es un servicio de suscripción mensual en el que recibirás productos seleccionados especificamente para ti
-            </p>
-            <p className='FAQ-question'>
-            ¿Cómo funciona la mistery box?
-            </p>
-           
+            Es un servicio de suscripción mensual en el que recibirás productos seleccionados especificamente para ti.
+           </p>
+           <h3 className='FAQ-question'>
+            ¿Qué pasa si no me quedan los productos?
+            </h3>
             <p className='FAQ-answer'>
-            Es un servicio de suscripción mensual en el que recibirás productos seleccionados especificamente para ti
-            </p>
-            <p className='FAQ-question'>
-            ¿Cómo funciona la mistery box?
-            </p>
-           
-            <p className='FAQ-answer'>
-            Es un servicio de suscripción mensual en el que recibirás productos seleccionados especificamente para ti
-            </p>
-            <p className='FAQ-question'>
-            ¿Cómo funciona la mistery box?
-            </p>
-           
-            <p className='FAQ-answer'>
-            Es un servicio de suscripción mensual en el que recibirás productos seleccionados especificamente para ti
-            </p>
-            <p className='FAQ-question'>
-            ¿Cómo funciona la mistery box?
-            </p>
-           
-            <p className='FAQ-answer'>
-            Es un servicio de suscripción mensual en el que recibirás productos seleccionados especificamente para ti
-            </p>
-           
+           No hay ningún problema, ponte en contacto con nosotros y te realizaremos el cambio en los productos que nos indiques sin costo extra. 
+           </p>
         </div>
     </div>
    
@@ -58,3 +34,4 @@ return(
 
 
 export default FAQ;
+ 

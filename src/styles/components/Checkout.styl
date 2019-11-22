@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
 @import '../Vars.styl'
+@import url('https://fonts.googleapis.com/css?family=Muli|Roboto&display=swap');
 
 .container {
   height:100%;
@@ -15,8 +16,9 @@
   display:-webkit-flex;
   display:-ms-flexbox;
   display:flex;
-  background:-webkit-linear-gradient(#c5e5e5, #ccddf9);
-  background:linear-gradient(#c9e5e9,#ccddf9);
+  background:#f8f9fa
+  font-family 'Muli', sans-serif
+  
 }
 .dropdown-select.visible {
   display:block;
@@ -61,7 +63,7 @@ ul li:hover {
   width:100%;
 }
 .half-input-table td:first-of-type {
-  border-right:10px solid #4488dd;
+  border-right:10px solid ventu-color1;
   width:50%;
 }
 .window {
@@ -125,7 +127,7 @@ ul li:hover {
 }
 .pay-btn {
   border:none;
-  background: ventu-color1
+  background: ventu-color3
   line-height:2em;
   border-radius:10px;
   font-size:19px;
@@ -175,7 +177,7 @@ ul li:hover {
   margin-right:auto;
 }
 .credit-info {
-  background:#4488dd;
+  background:ventu-color1;
   height:100%;
   width:50%;
   color:#eee;
@@ -268,3 +270,6 @@ ul li:hover {
     color white 
 
 
+.cart-info-pay
+  display flex
+  justify-content center

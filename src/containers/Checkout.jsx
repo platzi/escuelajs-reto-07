@@ -18,6 +18,8 @@ const Checkout = (props) => {
   return elements.reduce((accum, current) => accum + current)
   };
   let productsPrice = [];
+
+
     const cardDrop = () => {
         let activeDropdown;
         let node;
@@ -109,7 +111,39 @@ const Checkout = (props) => {
               </div>
 
             </div>
+            <div className='cart-info-pay'>
+          {cart.length > 0 && (
+        <div className="Cart-sidebar">
+            <div className='Cart-sidebar_left'>
+              <div className='Left-buttons'>
+              
+            
+
+              </div>
+
+            </div>
+
+            <div className='Cart-sidebar-right'>
+            <h3 className='total-cart'>Total a pagar:</h3>
+          {cart.map((item) => {
+            productsPrice.push(item.price);
+          })}
+          <h4>
+            $ 
+            {totalSumCart(productsPrice)} 
+          </h4>
+          <div className='Cart---sidebar-button'>
+            
           </div>
+
+
+            </div>
+          
+        </div>
+      )}
+          </div>
+          </div>
+         
         </div>
       </>
     );

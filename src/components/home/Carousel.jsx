@@ -2,6 +2,7 @@ import React from 'react';
 //import { connect } from 'react-redux';
 //import { addToCart } from '../actions';
 import '../../styles/components/Carousel.styl';
+import productBox from '../../assets/static/images/intro.jpg';
 import productImage from '../../assets/static/images/blog_1.jpg';
 
 
@@ -19,16 +20,14 @@ return(
                     <div className='carousel-item'>
                         <div className='carousel-item-block'>
                             <div className='item-block-image'>
-                                <img src={productImage} alt="foto1" className='item-image'/>
+                                <img src={productBox} alt="foto1" className='item-image'/>
                             </div>
                             <div className='item-block-text'>
-                                <h3>Marca 1</h3>
+                                <h3>Productos de temporada</h3>
                                 <p className='mb-0'>
-                                    Finding the perfect t-shirt
+                                    Visita nuestra tienda 
                                 </p>
-                                <p className='text-primary'>
-                                    $50
-                                </p>
+                            
                             </div>
 
                         </div>
@@ -40,13 +39,11 @@ return(
                                 <img src={productImage} alt="foto1" className='item-image'/>
                             </div>
                             <div className='item-block-text'>
-                                <h3>Marca 1</h3>
+                                <h3>Productos personalizados</h3>
                                 <p className='mb-0'>
-                                    Finding the perfect t-shirt
+                                    Ropa solo para ti
                                 </p>
-                                <p className='text-primary'>
-                                    $50
-                                </p>
+                                
                             </div>
 
                         </div>

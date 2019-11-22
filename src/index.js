@@ -23,21 +23,21 @@ const initialState = {
       "id": "2",
       "image": Product2,
       "title": "Tenis Marometta",
-      "description": "bla bla bla bla bla",
+      "description": "Tenis con diseños personalizados",
       "price": 750  
     },
     {
       "id": "3",
       "image": Product3,
       "title": "Jeans IC",
-      "description": "bla bla bla bla bla",
+      "description": "Jeans con ajuste especial",
       "price":  500
     },
     {
       "id": "4",
       "image": Product4,
       "title": "Sueter Pue",
-      "description": "bla bla bla bla bla",
+      "description": "Ideal para esta época de frío",
       "price": 350  
     },
   ]
