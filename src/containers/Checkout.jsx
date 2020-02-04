@@ -8,8 +8,11 @@ const Checkout = (props) => {
   const handleDeleteCart = (index) => {
     props.deleteToCart(index);
   }
+  
   const total = cart.reduce(
-    (totalValue, currentValue) => totalValue + currentValue.price,
+    (totalValue, currentValue) => {
+      return totalValue + currentValue.price
+    },
     0
   )
   return (

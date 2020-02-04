@@ -4,8 +4,8 @@
   "description": "Reto 7 Octubre 12: Curso de React Router y Redux",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --config ./webpack.config.js --mode production",
+    "start": "webpack-dev-server --config ./webpack.config.js",
     "server": "json-server locations.json",
     "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
     "lint": "eslint src/"
