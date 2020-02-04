@@ -40,6 +40,13 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: path.resolve(__dirname, 'dist'),
+    open: 'google chrome',
+    port: 9001,
+    hot: true,
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: './public/index.html',
